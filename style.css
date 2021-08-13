@@ -1,0 +1,169 @@
+
+/*Google heeft een pre-built css waardoor er een margin (witte ruimte is en het scherm niet beeldvullend is
+de) deze witrimte kan je weghalen door een body tag toe te voegen met margin auto op nul te zetten. */
+body {
+    margin:  auto 0;
+    font-family: Arial ;
+
+}
+
+.zone {
+    /*margin van de zones kan je uit zetten*/
+/*    padding:30px 50px;
+    margin:40px 60px;*/
+    cursor:pointer;
+    /* omdat we flexbox of css gridd gaan gebruiken is inline block niet nodig */
+/*    display:inline-block;*/
+    color:#FFF;
+    font-size:2em;
+    border-radius:4px;
+    border:1px solid #bbb;
+    transition: all 0.3s linear;
+}
+
+.zone:hover {
+    -webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+}
+
+.box:hover {
+    -webkit-box- transform: rotate(-7deg);
+    -moz-box- transform: rotate(-7deg);
+    -o-box- transform: rotate(-7deg);
+     transform: rotate(-7deg);
+}
+
+/*navigation hieronder*/
+.main-nav{
+    display: flex;
+    list-style: none;
+    font-size: 0.7em;
+    margin: 0; 
+}
+
+.sticky {
+   position:  fixed;
+   top: 0;
+   width: 100%; 
+}
+
+/*https://css-tricks.com/snippets/css/media-queries-for-standard-devices/ hier kan je standaard evices zien
+Zodra scherm kleiner wordt dan 600 px laat onderstaande instellng zien*/
+@media only screen and (max-width:  600px) {
+    .main-nav {
+        font-size: 0.5em;
+        padding: 0;
+    }
+
+}
+
+/*contacts helemaal naar RECHTS brengen met onderstaand CSS. MARGIN LEFT IS DUS TEKST HELEMAAL RECHTS*/
+.push {
+    margin-left:  auto;
+}
+
+/* afstand tussen menu in de navigatie menu */
+li { 
+padding: 20px; }
+
+/*tekst kleuren van de link in de menu*/
+a {
+    color: #f5f5f6;
+    text-decoration: none;
+}
+
+/*hieronder staat de css voor de cover we gebriken hiervoor geen Grid maar gewoon
+flexbox omdat het gewoon een button, background image is of wat tekst. Geen kollumen hier
+dat komt pas in project grid weer */
+.container {
+    display:  flex;
+    /*met onderstaande hou je altijd alles in het midden (tekst en plaatjes)*/
+    align-items: center;
+    justify-content: center;
+    /*gebruik voor hoogte geen pixel maar vieuwport heigt vh. hij kijkt altijd naar hoogte
+    van de website en vervolgens maakt hij de ontainer hier een percentage van*/
+    height:  50vh;
+}
+
+.cover {
+    width: 30rem;
+    height:  50vh;
+}
+
+/*project grid deze komt van box waarnaar wij verwijzen in de htm file*/
+.grid-wrapper{
+    display:  grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+
+}
+/*alle box met img als childrens doe iets */
+.box > img {
+    width: 100%;
+}
+
+/*de induviulele boxen worden hieronder uitgewerkt*/
+.box {
+  background-color: #444;  
+  padding:  130px;
+  margin:  20px;
+}
+
+/*footer zonder punt omdat de div is gewijzigd. */
+footer { 
+text-align: center; 
+}
+/*https://paulund.co.uk/how-to-create-shiny-css-buttons*/
+/***********************************************************************
+ *  Green Background
+ **********************************************************************/
+.green{
+    background: #56B870; /* Old browsers */
+    background: -moz-linear-gradient(top, #56B870 0%, #a5c956 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#56B870), color-stop(100%,#a5c956)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #56B870 0%,#a5c956 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #56B870 0%,#a5c956 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #56B870 0%,#a5c956 100%); /* IE10+ */
+    background: linear-gradient(top, #56B870 0%,#a5c956 100%); /* W3C */
+}
+
+/***********************************************************************
+ *  Red Background
+ **********************************************************************/
+.red{
+    background: #C655BE; /* Old browsers */
+    background: -moz-linear-gradient(top, #C655BE 0%, #cf0404 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#C655BE), color-stop(100%,#cf0404)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #C655BE 0%,#cf0404 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #C655BE 0%,#cf0404 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #C655BE 0%,#cf0404 100%); /* IE10+ */
+    background: linear-gradient(top, #C655BE 0%,#cf0404 100%); /* W3C */
+}
+
+/***********************************************************************
+ *  Yellow Background
+ **********************************************************************/
+.yellow{
+    background: #F3AAAA; /* Old browsers */
+    background: -moz-linear-gradient(top, #F3AAAA 0%, #febf04 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#F3AAAA), color-stop(100%,#febf04)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #F3AAAA 0%,#febf04 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #F3AAAA 0%,#febf04 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #F3AAAA 0%,#febf04 100%); /* IE10+ */
+    background: linear-gradient(top, #F3AAAA 0%,#febf04 100%); /* W3C */
+}
+
+/***********************************************************************
+ *  Blue Background
+ **********************************************************************/
+.blue{
+    background: #7abcff; /* Old browsers */
+    background: -moz-linear-gradient(top, #7abcff 0%, #60abf8 44%, #4096ee 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7abcff), color-stop(44%,#60abf8), color-stop(100%,#4096ee)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* IE10+ */
+    background: linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* W3C */
+}
